@@ -7,6 +7,7 @@
 #include "struct.h"
 
 
+int check_defaite(char board[], position *pos);
 
 
 int main()
@@ -54,8 +55,18 @@ int main()
         {
             print_grid(board);
             printf("Bravo !\n");
+            print_win();
             break;
         }
+
+        if (check_defaite(board, &pos) == 1)
+        {
+            print_grid(board);
+            printf("Défaite ! \n");
+            print_loose();
+            break;
+        }
+        
 
         print_grid(board);
     }
