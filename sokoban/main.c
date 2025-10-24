@@ -36,6 +36,7 @@ int main()
         pos.pos_user = placer_user(board, 'O');
         pos.pos_box = placer_box(board, 'X');
         pos.pos_objectif = placer_objectif(board, '.');
+        print_positions(&pos);
         print_grid(board);
 
     while (1)
@@ -53,6 +54,7 @@ int main()
         // Condition d'arrêt qui arrête le jeu une fois que la box est sur le '.'
         if (board[pos.pos_box] == board[pos.pos_objectif])
         {
+            print_positions(&pos);
             print_grid(board);
             printf("Bravo !\n");
             print_win();
@@ -61,13 +63,14 @@ int main()
 
         if (check_defaite(board, &pos) == 1)
         {
+            print_positions(&pos);
             print_grid(board);
             printf("Défaite ! \n");
             print_loose();
             break;
         }
         
-
+        print_positions(&pos);
         print_grid(board);
     }
     exit(0);

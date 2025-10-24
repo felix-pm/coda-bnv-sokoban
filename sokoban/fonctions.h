@@ -9,5 +9,6 @@ int placer_user(char board[], char user);
 int placer_box(char board[], char box);
 int placer_objectif(char board[], char objectif);
 void move(char board[], position *pos, char direction);
+void print_positions(position *pos);
 
 #endif

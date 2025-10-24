@@ -34,6 +34,23 @@ int placer_objectif(char board[], char objectif) {
     return pos;
 }
 
+
+void print_positions(position *pos)
+{
+    printf("\n----------------------------------\n");
+    printf("Localisations actuelles :\n");
+    printf("   Joueur (O)     → case %d (ligne %d, colonne %d)\n",
+           pos->pos_user, pos->pos_user / 10, pos->pos_user % 10);
+    printf("   Boîte  (X)     → case %d (ligne %d, colonne %d)\n",
+           pos->pos_box, pos->pos_box / 10, pos->pos_box % 10);
+    printf("   Objectif (.)   → case %d (ligne %d, colonne %d)\n",
+           pos->pos_objectif, pos->pos_objectif / 10, pos->pos_objectif % 10);
+    printf("----------------------------------\n\n");
+}
+
+
+
+
 // Fonction pour déplacer le joueur et pousser la boîte
 void move(char board[], position *pos, char move_user) {
     int direction = 0;
